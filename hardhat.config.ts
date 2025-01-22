@@ -5,8 +5,17 @@ require("dotenv").config();
 const { SEPOLIA_URL, SECRETE_KEY } = process.env;
 
 const config: HardhatUserConfig = {
-  // solidity: "0.8.28",
-  solidity: ">=0.7.0 <0.9.0",
+  solidity: "0.8.28",
+  // solidity: {
+  //   compilers: [
+  //           {
+  //               version: "0.7.0",
+  //           },
+  //           {
+  //               version: "0.8.0",
+  //           },
+  //       ],
+  // } ,
   networks: {
     sepolia: {
       url: SEPOLIA_URL || "",
