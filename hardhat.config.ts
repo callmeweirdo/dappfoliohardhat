@@ -2,27 +2,19 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 require("dotenv").config();
 
-const { SEPOLIA_URL, SECRETE_KEY } = process.env;
+const { SEPOLIA_URL, PRIVATE_KEY } = process.env;
 
 const config: HardhatUserConfig = {
   solidity: "0.8.28",
-  // solidity: {
-  //   compilers: [
-  //           {
-  //               version: "0.7.0",
-  //           },
-  //           {
-  //               version: "0.8.0",
-  //           },
-  //       ],
-  // } ,
   networks: {
     sepolia: {
       url: SEPOLIA_URL || "",
-      accounts:
-        SECRETE_KEY !== undefined ? [SECRETE_KEY] : [] 
-    }
-  }
+      accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+      gas: 2100000,
+      gasPrice: 8000000000,
+      // chainId: 11155111, // Ensure chainId matches Sepolia
+    },
+  },
 };
 
 export default config;
