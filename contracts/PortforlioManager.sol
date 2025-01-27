@@ -2,22 +2,23 @@
 pragma solidity ^0.8.28;
 
 import "./Education.sol";
-// import "./Projects.sol";
-// import "./Experience.sol";
 
 contract PortfolioManager {
     address public owner;
 
     Education public educationContract;
+    // Uncomment and implement these when ready:
     // Projects public projectsContract;
     // Experience public experienceContract;
 
-    // Constructor to initialize the PortfolioManager and deploy related contracts
+    // Constructor to initialize the PortfolioManager and deploy the Education contract
     constructor() {
         owner = msg.sender;
 
-        // Deploy related contracts and pass the owner address
+        // Deploy the Education contract and store its address
         educationContract = new Education(owner);
+
+        // Uncomment and initialize these when ready:
         // projectsContract = new Projects(owner);
         // experienceContract = new Experience(owner);
     }
@@ -28,17 +29,9 @@ contract PortfolioManager {
         _;
     }
 
-    // Function to get the addresses of the deployed contracts
-    function getContractsAddress() public view returns (
-        address education
-        // address projects,
-        // address experience
-    ) {
-        return (
-            address(educationContract)
-            // address(projectsContract),
-            // address(experienceContract)
-        );
+    // Function to get the address of the deployed Education contract
+    function getContractsAddress() public view returns (address education) {
+        return (address(educationContract));
     }
 
     // Example of a function to change ownership of the PortfolioManager

@@ -17,14 +17,11 @@ const main = async () => {
 
   console.log(`PortfolioManager Contract deployed at: ${portfolioManagerAddress}`);
 
-  // Call a function to retrieve related contracts' addresses
-  const [educationContract, projectsContract, experienceContract] =
-    await portfolioManagerContract.getContractsAddress();
+  // Call a function to retrieve the Education contract's address
+  const educationContract = await portfolioManagerContract.getContractsAddress();
 
   console.log("Related Contracts deployed:");
   console.log(`Education Contract: ${educationContract}`);
-  console.log(`Projects Contract: ${projectsContract}`);
-  console.log(`Experience Contract: ${experienceContract}`);
 };
 
 // Wrap the main function in a try-catch block for better error handling
