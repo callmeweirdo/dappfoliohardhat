@@ -7,6 +7,7 @@ contract Education {
     address public manager;
     struct EducationStruct{
         uint id;
+        string date;
         string name;
         string description;
         string image;
