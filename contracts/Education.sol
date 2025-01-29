@@ -8,10 +8,9 @@ contract Education {
     struct EducationStruct{
         uint id;
         string date;
-        string name;
-        string description;
-        string image;
-        string githublink;
+        string degree;
+        string knowledgeAcquired;
+        string institutionName;
     }
 
     EducationStruct[3] public educationDetails;
