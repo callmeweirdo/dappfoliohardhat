@@ -2,25 +2,27 @@
 pragma solidity ^0.8.28;
 
 import "./Education.sol";
+import "./Project.sol";
+import "./ExperienceContract.sol";
 
 contract PortfolioManager {
     address public owner;
 
-    Education public educationContract;
     // Uncomment and implement these when ready:
-    // Projects public projectsContract;
-    // Experience public experienceContract;
+    Education public educationContract;
+    Projects public projectsContract;
+    Experience public experienceContract;
 
     // Constructor to initialize the PortfolioManager and deploy the Education contract
     constructor() {
         owner = msg.sender;
 
         // Deploy the Education contract and store its address
-        educationContract = new Education(owner);
 
         // Uncomment and initialize these when ready:
-        // projectsContract = new Projects(owner);
-        // experienceContract = new Experience(owner);
+        educationContract = new Education(owner);
+        projectsContract = new Projects(owner);
+        experienceContract = new Experience(owner);
     }
 
     // Modifier to restrict certain functions to the contract owner
