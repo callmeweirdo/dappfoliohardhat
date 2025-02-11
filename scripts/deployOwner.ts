@@ -18,9 +18,9 @@ const main = async () => {
   console.log(`PortfolioManager Contract deployed at: ${portfolioManagerAddress}`);
 
   // Call a function to retrieve the Education contract's address
-  const educationContract = await portfolioManagerContract.getContractsAddress();
-  const projectContract = await portfolioManagerContract.getContractsAddress();
-  const experienceContract = await portfolioManagerContract.getContractsAddress();
+  const educationContract = await portfolioManagerContract.getContractAddresses();
+  const projectContract = await portfolioManagerContract.getContractAddresses();
+  const experienceContract = await portfolioManagerContract.getContractAddresses();
 
   console.log("Related Contracts deployed:");
   console.log(`Education Contract: ${educationContract}`);
